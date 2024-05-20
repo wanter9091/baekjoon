@@ -7,7 +7,8 @@ visited = [False for _ in range(N)]
 INF = 2147000000
 res = INF
 
-def DFS(L, idx):
+
+def dfs(L, idx):
     global res
     if L == N // 2:
         A = 0
@@ -23,9 +24,9 @@ def DFS(L, idx):
     for i in range(idx, N):
         if not visited[i]:
             visited[i] = True
-            DFS(L + 1, i + 1)
+            dfs(L + 1, i + 1)
             visited[i] = False
 
 
-DFS(0, 0)
+dfs(0, 0)
 print(res)
